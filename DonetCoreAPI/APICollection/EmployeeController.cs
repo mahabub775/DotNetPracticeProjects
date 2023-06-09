@@ -1,9 +1,6 @@
 ﻿using DonetCoreAPI.Model;
 using Microsoft.AspNetCore.Mvc;
 
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
 namespace DonetCoreAPI.APICollection
 {
 	
@@ -11,15 +8,16 @@ namespace DonetCoreAPI.APICollection
 	[Route("[controller]")]
 	public class EmployeeController : ControllerBase
 	{
-		
 
+		#region Declaration
 		List<Employee> _oEmployees = new List<Employee>();
-
-		public EmployeeController() {
-			_oEmployees.Add(new Employee() {Name="abudllabn", SalryId = 15,Salary = 150});
-			_oEmployees.Add(new Employee() { Name = "Shahin", SalryId = 112, Salary = 350 });
-			_oEmployees.Add(new Employee() { Name = "Nazrul", SalryId = 1585, Salary = 250 });
+		public EmployeeController() 
+		{
+			_oEmployees.Add(new Employee() {Name="abudllabn", Id = 15,Salary = 150});
+			_oEmployees.Add(new Employee() { Name = "Shahin", Id = 112, Salary = 350 });
+			_oEmployees.Add(new Employee() { Name = "Nazrul", Id = 1585, Salary = 250 });
 		}
+		#endregion
 
 		[HttpGet]
 		public ActionResult<Employee> Gets()
@@ -32,7 +30,7 @@ namespace DonetCoreAPI.APICollection
 		[HttpGet("{id}")]
 		public async Task<Employee> Get(int id)
 		{
-			return _oEmployees.Where(x => x.SalryId == id).FirstOrDefault();
+			return _oEmployees.Where(x => x.Id == id).FirstOrDefault();
 		}
 
 		// POST api/<EmployeeController>
@@ -50,23 +48,23 @@ namespace DonetCoreAPI.APICollection
 		[HttpPut("{id}")]
 		public async Task<Employee> Put(int id, Employee value)
 		{
-			var ofindOb =  _oEmployees.Where(x=>x.SalryId==id).FirstOrDefault();	
+			var ofindOb =  _oEmployees.Where(x=>x.Id==id).FirstOrDefault();	
 			if (ofindOb != null)
 			{
 				ofindOb.Name = value.Name;
 				ofindOb.Salary = value.Salary;
-				ofindOb.SalryId = value.SalryId;
+				ofindOb.Id = value.Id;
 				ofindOb.JoinDate = value.JoinDate;
 			}
 
 			return ofindOb;
 		}
 
-		// DELETE api/<EmployeeController>/5
+
 		[HttpDelete("{id}")]
 		public async Task<List<Employee>> Delete(int id)
 		{
-			var ofindOb = _oEmployees.Where(x => x.SalryId == id).FirstOrDefault();
+			var ofindOb = _oEmployees.Where(x => x.Id == id).FirstOrDefault();
 			_oEmployees.Remove(ofindOb);
 
 			return  _oEmployees;
