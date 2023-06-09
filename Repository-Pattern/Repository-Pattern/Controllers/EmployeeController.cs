@@ -24,12 +24,12 @@ namespace DonetCoreAPI.APICollection
 
 		// GET api/<EmployeeController>/5
 		[HttpGet("{id}")]
-		public async Task<Employee> Get(int id)
+		public async Task<ActionResult<Employee>> Get(int id)
 		{
 			var oResult = _oEmployeeService.Get(id);
-			if(oResult==null)
-				return null;
-			return oResult;
+			if (oResult == null)	
+				return NotFound("Data Not Found");
+			return Ok(oResult);
 		}
 
 		[HttpPost]
