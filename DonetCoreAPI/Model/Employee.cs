@@ -4,13 +4,13 @@
 	{
 		public Employee()
 		{
-			SalryId = 0;
+			Id = 0;
 			Name = "";
 			Salary = 0;
 			JoinDate = DateTime.Today;
 		}
 		public string Name { get; set; }
-		public int SalryId { get; set; }
+		public int Id { get; set; }
 		public double Salary { get; set; }
 		public DateTime JoinDate { get; set; }
 	}
