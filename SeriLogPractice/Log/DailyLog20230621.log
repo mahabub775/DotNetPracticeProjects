@@ -1,0 +1,23 @@
+2023-06-21 08:10:03.169 +06:00 [INF] Get data by simple Get
+2023-06-21 08:14:47.955 +06:00 [INF] Now listening on: https://localhost:7170
+2023-06-21 08:14:47.990 +06:00 [INF] Now listening on: http://localhost:5296
+2023-06-21 08:14:47.997 +06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-06-21 08:14:47.998 +06:00 [INF] Hosting environment: Development
+2023-06-21 08:14:47.998 +06:00 [INF] Content root path: F:\DotNetPracticeProjects\SeriLogPractice
+2023-06-21 08:14:48.884 +06:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/index.html - -
+2023-06-21 08:14:49.401 +06:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/index.html - - - 200 - text/html;charset=utf-8 520.9596ms
+2023-06-21 08:14:49.412 +06:00 [INF] Request starting HTTP/2 GET https://localhost:7170/_vs/browserLink - -
+2023-06-21 08:14:49.412 +06:00 [INF] Request starting HTTP/2 GET https://localhost:7170/_framework/aspnetcore-browser-refresh.js - -
+2023-06-21 08:14:49.424 +06:00 [INF] Request finished HTTP/2 GET https://localhost:7170/_framework/aspnetcore-browser-refresh.js - - - 200 12000 application/javascript;+charset=utf-8 11.0148ms
+2023-06-21 08:14:49.466 +06:00 [INF] Request finished HTTP/2 GET https://localhost:7170/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 53.7018ms
+2023-06-21 08:14:49.666 +06:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/v1/swagger.json - -
+2023-06-21 08:14:49.767 +06:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/index.html - -
+2023-06-21 08:14:49.778 +06:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/index.html - - - 200 - text/html;charset=utf-8 11.2718ms
+2023-06-21 08:14:49.874 +06:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 207.7728ms
+2023-06-21 08:14:54.207 +06:00 [INF] Request starting HTTP/2 GET https://localhost:7170/WeatherForecast - -
+2023-06-21 08:14:54.222 +06:00 [INF] Executing endpoint 'SeriLogPractice.Controllers.WeatherForecastController.Get (SeriLogPractice)'
+2023-06-21 08:14:54.244 +06:00 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[SeriLogPractice.WeatherForecast] Get() on controller SeriLogPractice.Controllers.WeatherForecastController (SeriLogPractice).
+2023-06-21 08:14:54.254 +06:00 [INF] Executing ObjectResult, writing value of type 'SeriLogPractice.WeatherForecast[]'.
+2023-06-21 08:14:54.271 +06:00 [INF] Executed action SeriLogPractice.Controllers.WeatherForecastController.Get (SeriLogPractice) in 22.7345ms
+2023-06-21 08:14:54.271 +06:00 [INF] Executed endpoint 'SeriLogPractice.Controllers.WeatherForecastController.Get (SeriLogPractice)'
+2023-06-21 08:14:54.272 +06:00 [INF] Request finished HTTP/2 GET https://localhost:7170/WeatherForecast - - - 200 - application/json;+charset=utf-8 64.9128ms
