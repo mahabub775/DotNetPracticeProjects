@@ -1,19 +1,19 @@
-global using Cashing.Models;
-global using Cashing.RepositoryServices;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+//builder.Logging.ClearProviders();
+//builder.Logging.AddConsole();
+var mylogger = new LoggerConfiguration().WriteTo
+	.File("Log/DailyLog.log",rollingInterval:RollingInterval.Day)
+	.CreateLogger();
+builder.Services.AddSerilog(mylogger);
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddMemoryCache();
-builder.Services.AddDbContext<CashingProjectContext>();
-builder.Services.AddScoped<IEmployeeService, EmployeeService>();
-builder.Services.AddSingleton<MyMemoryCash>();
-
 
 var app = builder.Build();
 
@@ -25,6 +25,9 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
 app.UseAuthorization();
+
 app.MapControllers();
+
 app.Run();

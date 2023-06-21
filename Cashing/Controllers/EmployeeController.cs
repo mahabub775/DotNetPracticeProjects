@@ -10,13 +10,14 @@ namespace Cashing.Controllers
 	{
 		private readonly IEmployeeService _oEmployeeService ;
 		private readonly IMemoryCache _Memorycash;
+		private readonly MyMemoryCash _myMemorycash;
 		public EmployeeController(IEmployeeService iEmployeeService, IMemoryCache memoryCache) 
 		{ 
 			_oEmployeeService = iEmployeeService;
 			_Memorycash = memoryCache;
 		}
 	
-
+		//using cashing
 		[HttpGet]
 		public async Task<List<Employee>> Gets()
 		{
@@ -30,8 +31,9 @@ namespace Cashing.Controllers
 				_Memorycash.Set("myKey", oResult, TimeSpan.FromMinutes(2));
 				return oResult;
 			}
-			
-			
+			//_myMemorycash.Cache.Remove(CacheKeys.Entry);
+
+
 		}
 
 		// GET api/<EmployeeController>/5
